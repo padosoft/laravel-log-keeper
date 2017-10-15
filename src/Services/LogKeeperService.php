@@ -124,7 +124,7 @@ class LogKeeperService
             }
         }
 
-        $compressedlogs = $this->localRepo->getCompressedLogs();
+        $compressedlogs = $this->localRepo->getCompressed();
 
         foreach ($compressedlogs as $compressedlog) {
 
