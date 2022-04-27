@@ -2,6 +2,7 @@
 
 use Exception;
 use Illuminate\Console\Command;
+use Illuminate\Log\Logger;
 use MathiasGrimm\LaravelLogKeeper\Factories\LogKeeperServiceFactory;
 
 class LogKeeper extends Command
@@ -29,7 +30,7 @@ class LogKeeper extends Command
      */
     public function handle()
     {
-        $logger = \Log::getMonolog();
+        $logger = app(\Illuminate\Log\Logger::class)->getLogger();
 
         try {
             $service = LogKeeperServiceFactory::buildFromLaravelConfig();
