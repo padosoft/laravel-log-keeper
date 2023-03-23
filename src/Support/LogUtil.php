@@ -6,27 +6,7 @@ use InvalidArgumentException;
 class LogUtil
 {
     /**
-     * Get all compressed files that follow the daily format
-     *
-     * @param $logs
-     * @param bool $keepIndex
-     * @return mixed
-     */
-    public static function getCompressedLogs($logs, $keepIndex = false)
-    {
-        $logs = array_filter($logs, function ($item) {
-            return (bool) preg_match('/^.*?\d{4}-\d{2}-\d{2}\.tar\.bz2$/', $item);
-        });
-
-        if (!$keepIndex) {
-            $logs = array_values($logs);
-        }
-
-        return $logs;
-    }
-
-    /**
-     * Get all .log and compressed files that follow the daily format
+     * Get all compressed logs that follow the daily format
      *
      * @param $logs
      * @param bool $keepIndex
@@ -35,7 +15,7 @@ class LogUtil
     public static function getCompressed($logs, $keepIndex = false)
     {
         $logs = array_filter($logs, function ($item) {
-            return (bool) preg_match('/^.*?\d{4}-\d{2}-\d{2}\.log\.tar\.bz2$/', $item);
+            return (bool) preg_match('/^.*?\d{4}-\d{2}-\d{2}(\.log\.tar\.bz2|\.log\.gz){1}$/', $item);
         });
 
         if (!$keepIndex) {
@@ -46,7 +26,7 @@ class LogUtil
     }
 
     /**
-     * Get all .log files that follow the daily format
+     * Get all logs with ext .log that follow the daily format
      *
      * @param $logs
      * @param bool $keepIndex

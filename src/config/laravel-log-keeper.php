@@ -13,7 +13,7 @@ return [
     // if it is set to false, the local files older than the local retention will be
     // delete without being uploaded to the remote disk
     // ----------------------------------------------------------------------------
-    'enabled_remote' => env('LARAVEL_LOG_KEEPER_ENABLED_REMOTE', true),
+    'enabled_remote' => env('LARAVEL_LOG_KEEPER_ENABLED_REMOTE', false),
 
     // ----------------------------------------------------------------------------
     // Where in the remote location it will be stored. You can leave it blank
@@ -21,6 +21,13 @@ return [
     // use the same s3 bucket for storing the logs in different environments
     // ----------------------------------------------------------------------------
     'remote_path' => rtrim(env('LARAVEL_LOG_KEEPER_REMOTE_PATH'), '/'),
+
+    // ----------------------------------------------------------------------------
+    // Enable or Disable processing Files With Zero Days Retention
+    // Normally log files in the same day, sometimes is usefull because another process
+    // lock or logging into this file and compress fails.
+    // ----------------------------------------------------------------------------
+    'processFilesWithZeroDaysRetention' => env('LARAVEL_LOG_KEEPER_PROCESS_FILES_WITH_ZERO_DAYS_RETENTION', false),
 
     // ----------------------------------------------------------------------------
     // How many days a file will be kept on the local disk before
@@ -35,12 +42,12 @@ return [
     // ----------------------------------------------------------------------------
     // How many days a compressed file will be kept on the local disk before
     // being uploaded to the remote disk.
-    // Default is 7 days.
-    // Local files with more than 7 days will be compressed using bzip2 and uploaded
+    // Default is 15 days.
+    // Local compressed files with more than 15 days will be compressed using bzip2 and uploaded
     // to the remote disk. They will also be deleted from the local disk after being
     // uploaded
     // ----------------------------------------------------------------------------
-    'localRetentionDaysForCompressed' => env('LARAVEL_COMPRESSED_LOG_KEEPER_LOCAL_RETENTION_DAYS', 7),
+    'localRetentionDaysForCompressed' => env('LARAVEL_LOG_KEEPER_LOCAL_RETENTION_DAYS_FOR_COMPRESSED', 15),
 
     // ----------------------------------------------------------------------------
     // How many days a file will be kept on the remote for.

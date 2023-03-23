@@ -1,9 +1,10 @@
 <?php
+namespace MathiasGrimm\LaravelLogKeeper\Test\Support;
 
 use MathiasGrimm\LaravelLogKeeper\Support\LogUtil;
 use Carbon\Carbon;
 
-class LogUtilTest extends TestCase
+class LogUtilTest extends \MathiasGrimm\LaravelLogKeeper\Test\TestCase
 {
 
     /**

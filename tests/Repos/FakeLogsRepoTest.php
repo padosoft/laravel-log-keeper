@@ -1,9 +1,9 @@
 <?php
-
+namespace MathiasGrimm\LaravelLogKeeper\Test\Repos;
 
 use MathiasGrimm\LaravelLogKeeper\Repos\FakeLogsRepo;
 
-class FakeLogsRepoTest extends TestCase
+class FakeLogsRepoTest extends \MathiasGrimm\LaravelLogKeeper\Test\TestCase
 {
     private function getRepo()
     {

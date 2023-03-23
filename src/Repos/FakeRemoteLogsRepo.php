@@ -12,4 +12,9 @@ class FakeRemoteLogsRepo extends FakeLogsRepo
             throw new Exception("remote_disk not configured for Laravel Log Keeper");
         }
     }
+
+    public function exists($log)
+    {
+        return false;
+    }
 }

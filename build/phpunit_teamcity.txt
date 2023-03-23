@@ -1,0 +1,74 @@
+
+##teamcity[testCount count='13' flowId='7600']
+
+##teamcity[testSuiteStarted name='Padosoft Test Suite' flowId='7600']
+
+##teamcity[testSuiteStarted name='MathiasGrimm\LaravelLogKeeper\Test\Repos\FakeLogsRepoTest' locationHint='php_qn://C:\xampp\htdocs\laravel-log-keeper\tests\Repos\FakeLogsRepoTest.php::\MathiasGrimm\LaravelLogKeeper\Test\Repos\FakeLogsRepoTest' flowId='7600']
+
+##teamcity[testStarted name='it_gets_logs' locationHint='php_qn://C:\xampp\htdocs\laravel-log-keeper\tests\Repos\FakeLogsRepoTest.php::\MathiasGrimm\LaravelLogKeeper\Test\Repos\FakeLogsRepoTest::it_gets_logs' flowId='7600']
+
+##teamcity[testFinished name='it_gets_logs' duration='428' flowId='7600']
+
+##teamcity[testStarted name='it_compresses' locationHint='php_qn://C:\xampp\htdocs\laravel-log-keeper\tests\Repos\FakeLogsRepoTest.php::\MathiasGrimm\LaravelLogKeeper\Test\Repos\FakeLogsRepoTest::it_compresses' flowId='7600']
+
+##teamcity[testFinished name='it_compresses' duration='27' flowId='7600']
+
+##teamcity[testStarted name='it_deletes' locationHint='php_qn://C:\xampp\htdocs\laravel-log-keeper\tests\Repos\FakeLogsRepoTest.php::\MathiasGrimm\LaravelLogKeeper\Test\Repos\FakeLogsRepoTest::it_deletes' flowId='7600']
+
+##teamcity[testFinished name='it_deletes' duration='16' flowId='7600']
+
+##teamcity[testSuiteFinished name='MathiasGrimm\LaravelLogKeeper\Test\Repos\FakeLogsRepoTest' flowId='7600']
+
+##teamcity[testSuiteStarted name='MathiasGrimm\LaravelLogKeeper\Test\Repos\FakeRemoteLogsRepoTest' locationHint='php_qn://C:\xampp\htdocs\laravel-log-keeper\tests\Repos\FakeRemoteLogsRepoTest.php::\MathiasGrimm\LaravelLogKeeper\Test\Repos\FakeRemoteLogsRepoTest' flowId='7600']
+
+##teamcity[testStarted name='it_throws_exception_when_enable_remote_is_true_and_remote_disk_is_null' locationHint='php_qn://C:\xampp\htdocs\laravel-log-keeper\tests\Repos\FakeRemoteLogsRepoTest.php::\MathiasGrimm\LaravelLogKeeper\Test\Repos\FakeRemoteLogsRepoTest::it_throws_exception_when_enable_remote_is_true_and_remote_disk_is_null' flowId='7600']
+
+##teamcity[testFinished name='it_throws_exception_when_enable_remote_is_true_and_remote_disk_is_null' duration='27' flowId='7600']
+
+##teamcity[testSuiteFinished name='MathiasGrimm\LaravelLogKeeper\Test\Repos\FakeRemoteLogsRepoTest' flowId='7600']
+
+##teamcity[testSuiteStarted name='MathiasGrimm\LaravelLogKeeper\Test\Services\LogKeeperServiceTest' locationHint='php_qn://C:\xampp\htdocs\laravel-log-keeper\tests\Services\LogKeeperServiceTest.php::\MathiasGrimm\LaravelLogKeeper\Test\Services\LogKeeperServiceTest' flowId='7600']
+
+##teamcity[testStarted name='it_has_no_local_files_older_than_the_local_retention' locationHint='php_qn://C:\xampp\htdocs\laravel-log-keeper\tests\Services\LogKeeperServiceTest.php::\MathiasGrimm\LaravelLogKeeper\Test\Services\LogKeeperServiceTest::it_has_no_local_files_older_than_the_local_retention' flowId='7600']
+
+##teamcity[testFinished name='it_has_no_local_files_older_than_the_local_retention' duration='31' flowId='7600']
+
+##teamcity[testStarted name='it_has_no_local_compressed_files' locationHint='php_qn://C:\xampp\htdocs\laravel-log-keeper\tests\Services\LogKeeperServiceTest.php::\MathiasGrimm\LaravelLogKeeper\Test\Services\LogKeeperServiceTest::it_has_no_local_compressed_files' flowId='7600']
+
+##teamcity[testFinished name='it_has_no_local_compressed_files' duration='17' flowId='7600']
+
+##teamcity[testStarted name='it_does_nothing_if_enabled_is_false' locationHint='php_qn://C:\xampp\htdocs\laravel-log-keeper\tests\Services\LogKeeperServiceTest.php::\MathiasGrimm\LaravelLogKeeper\Test\Services\LogKeeperServiceTest::it_does_nothing_if_enabled_is_false' flowId='7600']
+
+##teamcity[testFinished name='it_does_nothing_if_enabled_is_false' duration='19' flowId='7600']
+
+##teamcity[testStarted name='it_does_nothing_remotely_if_enabled_remote_is_false' locationHint='php_qn://C:\xampp\htdocs\laravel-log-keeper\tests\Services\LogKeeperServiceTest.php::\MathiasGrimm\LaravelLogKeeper\Test\Services\LogKeeperServiceTest::it_does_nothing_remotely_if_enabled_remote_is_false' flowId='7600']
+
+##teamcity[testFinished name='it_does_nothing_remotely_if_enabled_remote_is_false' duration='19' flowId='7600']
+
+##teamcity[testSuiteFinished name='MathiasGrimm\LaravelLogKeeper\Test\Services\LogKeeperServiceTest' flowId='7600']
+
+##teamcity[testSuiteStarted name='MathiasGrimm\LaravelLogKeeper\Test\Support\LogUtilTest' locationHint='php_qn://C:\xampp\htdocs\laravel-log-keeper\tests\Support\LogUtilTest.php::\MathiasGrimm\LaravelLogKeeper\Test\Support\LogUtilTest' flowId='7600']
+
+##teamcity[testStarted name='it_gets_only_logs' locationHint='php_qn://C:\xampp\htdocs\laravel-log-keeper\tests\Support\LogUtilTest.php::\MathiasGrimm\LaravelLogKeeper\Test\Support\LogUtilTest::it_gets_only_logs' flowId='7600']
+
+##teamcity[testFinished name='it_gets_only_logs' duration='21' flowId='7600']
+
+##teamcity[testStarted name='it_gets_only_compressed_logs' locationHint='php_qn://C:\xampp\htdocs\laravel-log-keeper\tests\Support\LogUtilTest.php::\MathiasGrimm\LaravelLogKeeper\Test\Support\LogUtilTest::it_gets_only_compressed_logs' flowId='7600']
+
+##teamcity[testFinished name='it_gets_only_compressed_logs' duration='19' flowId='7600']
+
+##teamcity[testStarted name='it_maps_basename' locationHint='php_qn://C:\xampp\htdocs\laravel-log-keeper\tests\Support\LogUtilTest.php::\MathiasGrimm\LaravelLogKeeper\Test\Support\LogUtilTest::it_maps_basename' flowId='7600']
+
+##teamcity[testFinished name='it_maps_basename' duration='18' flowId='7600']
+
+##teamcity[testStarted name='it_gets_the_date_as_carbon_or_throw_exception_if_it_is_not_valid_log' locationHint='php_qn://C:\xampp\htdocs\laravel-log-keeper\tests\Support\LogUtilTest.php::\MathiasGrimm\LaravelLogKeeper\Test\Support\LogUtilTest::it_gets_the_date_as_carbon_or_throw_exception_if_it_is_not_valid_log' flowId='7600']
+
+##teamcity[testFinished name='it_gets_the_date_as_carbon_or_throw_exception_if_it_is_not_valid_log' duration='17' flowId='7600']
+
+##teamcity[testStarted name='it_gets_the_diff' locationHint='php_qn://C:\xampp\htdocs\laravel-log-keeper\tests\Support\LogUtilTest.php::\MathiasGrimm\LaravelLogKeeper\Test\Support\LogUtilTest::it_gets_the_diff' flowId='7600']
+
+##teamcity[testFinished name='it_gets_the_diff' duration='18' flowId='7600']
+
+##teamcity[testSuiteFinished name='MathiasGrimm\LaravelLogKeeper\Test\Support\LogUtilTest' flowId='7600']
+
+##teamcity[testSuiteFinished name='Padosoft Test Suite' flowId='7600']

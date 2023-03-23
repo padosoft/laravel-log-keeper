@@ -13,4 +13,6 @@ interface LogsRepoInterface
     public function get($log);
 
     public function put($log, $content);
+
+    public function exists($log);
 }

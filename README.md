@@ -77,6 +77,14 @@ To use Laravel Log Keeper your log files have to be in the daily format, which i
     ...
 ```
 
+### Timezone
+To use Laravel Log Keeper pay attention to timezone laravel app setting, which is defined in your `config/app.php` or datetime check fails.
+```php
+    ...
+    'timezone' => 'Europe/Rome',
+    ...
+```
+
 ### Environment
 You can override the following variables placing them in your .env
 (LARAVEL_LOG_KEEPER_REMOTE_DISK is mandatory)
@@ -87,13 +95,14 @@ Example:
 # .env
 ...
 
-
 LARAVEL_LOG_KEEPER_ENABLED=true
 LARAVEL_LOG_KEEPER_ENABLED_REMOTE=false
 LARAVEL_LOG_KEEPER_REMOTE_PATH=/
+LARAVEL_LOG_KEEPER_PROCESS_FILES_WITH_ZERO_DAYS_RETENTION=false
 LARAVEL_LOG_KEEPER_LOCAL_RETENTION_DAYS=7
+LARAVEL_LOG_KEEPER_LOCAL_RETENTION_DAYS_FOR_COMPRESSED=15
 LARAVEL_LOG_KEEPER_REMOTE_RETENTION_DAYS=30
-LARAVEL_LOG_KEEPER_REMOTE_DISK=storage
+LARAVEL_LOG_KEEPER_REMOTE_DISK=local
 LARAVEL_LOG_KEEPER_LOG=true
 
 ...
@@ -115,7 +124,7 @@ LARAVEL_LOG_KEEPER_LOG=true
     // if it is set to false, the local files older than the local retention will be
     // delete without being uploaded to the remote disk
     // ----------------------------------------------------------------------------
-    'enabled_remote' => env('LARAVEL_LOG_KEEPER_ENABLED_REMOTE', true),
+    'enabled_remote' => env('LARAVEL_LOG_KEEPER_ENABLED_REMOTE', false),
 
     // ----------------------------------------------------------------------------
     // Where in the remote location it will be stored. You can leave it blank
@@ -123,6 +132,13 @@ LARAVEL_LOG_KEEPER_LOG=true
     // use the same s3 bucket for storing the logs in different environments
     // ----------------------------------------------------------------------------
     'remote_path' => rtrim(env('LARAVEL_LOG_KEEPER_REMOTE_PATH'), '/'),
+
+    // ----------------------------------------------------------------------------
+    // Enable or Disable processing Files With Zero Days Retention
+    // Normally log files in the same day, sometimes is usefull because another process
+    // lock or logging into this file and compress fails.
+    // ----------------------------------------------------------------------------
+    'processFilesWithZeroDaysRetention' => env('LARAVEL_LOG_KEEPER_PROCESS_FILES_WITH_ZERO_DAYS_RETENTION', false),
 
     // ----------------------------------------------------------------------------
     // How many days a file will be kept on the local disk before
@@ -133,6 +149,13 @@ LARAVEL_LOG_KEEPER_LOG=true
     // uploaded
     // ----------------------------------------------------------------------------
     'localRetentionDays' => env('LARAVEL_LOG_KEEPER_LOCAL_RETENTION_DAYS', 7),
+    
+    // ----------------------------------------------------------------------------
+    // How many days a compressed file will be kept on the local disk.
+    // Default is 15 days.
+    // Local compressed files with more than 15 days will be deleted on the local disk.
+    // ----------------------------------------------------------------------------
+    'localRetentionDaysForCompressed' => env('LARAVEL_LOG_KEEPER_LOCAL_RETENTION_DAYS_FOR_COMPRESSED', 15),
 
     // ----------------------------------------------------------------------------
     // How many days a file will be kept on the remote for.

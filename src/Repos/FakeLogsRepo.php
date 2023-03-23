@@ -38,7 +38,6 @@ class FakeLogsRepo implements LogsRepoInterface
     {
         $logs = LogUtil::getLogs($this->logs);
         $logs = LogUtil::mapBasename($logs);
-
         return $logs;
     }
 
@@ -77,4 +76,10 @@ class FakeLogsRepo implements LogsRepoInterface
     {
         $this->logs[] = '/fake/storage/logs/' . $log;
     }
+
+    public function exists($log)
+    {
+        return true;
+    }
+
 }

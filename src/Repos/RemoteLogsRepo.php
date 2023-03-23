@@ -66,4 +66,11 @@ class RemoteLogsRepo implements LogsRepoInterface
     {
         return $this->disk->get("{$this->remotePath}/{$log}");
     }
+
+    public function exists($log)
+    {
+        $path = "{$this->remotePath}/{$log}";
+
+        return $this->disk->exists($path);
+    }
 }

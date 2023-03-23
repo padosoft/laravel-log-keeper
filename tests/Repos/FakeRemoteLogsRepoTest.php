@@ -1,8 +1,10 @@
 <?php
 
+namespace MathiasGrimm\LaravelLogKeeper\Test\Repos;
+
 use MathiasGrimm\LaravelLogKeeper\Repos\FakeRemoteLogsRepo;
 
-class FakeRemoteLogsRepoTest extends TestCase
+class FakeRemoteLogsRepoTest extends  \MathiasGrimm\LaravelLogKeeper\Test\TestCase
 {
     /**
      * @test
@@ -12,18 +14,17 @@ class FakeRemoteLogsRepoTest extends TestCase
         $config = config('laravel-log-keeper');
 
         $config['enabled_remote'] = true;
-        $config['remote_disk'   ] = null;
-
+        $config['remote_disk'] = null;
+        $this->expectException(\Exception::class);
+        $repo = new FakeRemoteLogsRepo($config);
         try {
-            $repo = new FakeRemoteLogsRepo($config);
+
             $this->fail('It should not get here');
         } catch (Exception $e) {
             $this->assertSame('remote_disk not configured for Laravel Log Keeper', $e->getMessage());
         }
 
     }
-
-    
 
 
 }
